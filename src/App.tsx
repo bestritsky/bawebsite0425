@@ -500,9 +500,9 @@ function App() {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                <img src="/images/leaf-logo.png" alt="Binary Advisers Logo" className="w-8 h-8" />
+                <img src="/images/leaf-logo.png" alt="AI Sherpas Logo" className="w-8 h-8" />
                 <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  Binary Advisers
+                  AI Sherpas
                 </span>
               </Link>
 
