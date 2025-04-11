@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { 
-  Clock, TrendingUp, DollarSign, CheckCircle, Brain, Cpu, Network, 
-  Bot, Sparkles, ArrowRight, Menu, X, Lightbulb, Users, Shield,
-  BarChart, BookOpen, MessageSquare, Phone, Mail, Building, ChevronDown,
-  MessageCircle, Target, Zap, Heart
+import {
+  Clock, TrendingUp, DollarSign, CheckCircle, Network,
+  Sparkles, ArrowRight, Menu, X, Users, Shield,
+  Phone, ChevronDown, MessageCircle, Target, Zap, Heart
 } from 'lucide-react';
 
 import AutomationsPage from './AutomationsPage';
+import EducationPage from './EducationPage';
 // Components
 const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link to={to} className="text-gray-300 hover:text-white transition-colors duration-200">
@@ -25,11 +25,10 @@ const ValueCard = ({ icon: Icon, title, description }: { icon: any; title: strin
   </div>
 );
 
-const ProcessStep = ({ number, title, description, isLeft = true }: { 
-  number: number; 
-  title: string; 
+const ProcessStep = ({ number, title, description }: {
+  number: number;
+  title: string;
   description: string;
-  isLeft?: boolean;
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const stepRef = useRef(null);
@@ -105,7 +104,7 @@ const FAQItem = ({ question, answer }: { question: string; answer: string }) => 
       setContentHeight(contentRef.current.scrollHeight);
     }
   }, [isOpen]);
-  
+
   return (
     <div className="bg-white/5 backdrop-blur-lg rounded-lg overflow-hidden transition-colors duration-300 hover:bg-white/10">
       <button
@@ -162,11 +161,11 @@ function HomePage() {
             ))}
           </div>
         </div>
-        
+
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 gradient-text animate-gradient">
-              Business Results First, AI Second
+              Results First, AI Second
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mb-8">
               Cut through the chaos—We simplify your business and deliver measurable results without technical complexity.
@@ -174,7 +173,7 @@ function HomePage() {
             <p className="text-lg text-gray-400 max-w-2xl mb-12">
               In today's economy, practical solutions matter more than flashy technology. We understand your business challenges, clarify your processes, and determine if automation can genuinely help.
             </p>
-            
+
             <button className="px-8 py-4 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 flex items-center gap-2 text-lg group">
               <Sparkles className="w-5 h-5 group-hover:text-blue-400 transition-colors" />
               See How We've Helped Similar Businesses
@@ -278,7 +277,7 @@ function HomePage() {
           <p className="text-xl text-gray-400 max-w-3xl mx-auto text-center mb-16">
             Chaos arises from unclear processes, overwhelmed teams, uncertain decisions, and complex technology implementations. Our pragmatic approach prioritizes simplicity, clarity, measurable improvements, and team empowerment, turning your chaos into clarity.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ChaosCard
               title="Operational Chaos"
@@ -443,7 +442,7 @@ function AboutPage() {
             ))}
           </div>
         </div>
-        
+
         <div className="container mx-auto px-4 z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 gradient-text animate-gradient">
@@ -501,12 +500,12 @@ function App() {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="text-2xl font-bold flex items-center gap-2">
-                <Bot className="w-8 h-8 text-blue-400" />
+                <img src="/images/leaf-logo.png" alt="Binary Advisers Logo" className="w-8 h-8" />
                 <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  AutomatePro
+                  Binary Advisers
                 </span>
               </Link>
-              
+
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -524,7 +523,8 @@ function App() {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/services">Services</NavLink>
-                <NavLink to="/automations">Education</NavLink>
+                <NavLink to="/education">Education</NavLink>
+                <NavLink to="/automations">Automations</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
                 <button className="px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 flex items-center gap-2">
                   <Phone className="w-4 h-4" />
@@ -545,7 +545,8 @@ function App() {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/about">About</NavLink>
                 <NavLink to="/services">Services</NavLink>
-                <NavLink to="/automations">Education</NavLink>
+                <NavLink to="/education">Education</NavLink>
+                <NavLink to="/automations">Automations</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
                 <button className="w-full px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-all duration-300 flex items-center gap-2 justify-center">
                   <Phone className="w-4 h-4" />
@@ -560,6 +561,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/education" element={<EducationPage />} />
           <Route path="/automations" element={<AutomationsPage />} />
         </Routes>
       </div>

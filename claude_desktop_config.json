@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "docker": {
+      "command": "C:\\Users\\Henry\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\Scripts\\mcp-server-docker.exe",
+      "args": []
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "BSA8CF8YeaKwvdH5Mfy_Sy-zvR-isx_"
+      }
+    }
+  }
+}

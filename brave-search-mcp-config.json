@@ -1,0 +1,26 @@
+{
+    "augment": {
+        "advanced": {
+            "mcpServers": {
+                "brave-search": {
+                    "name": "brave-search",
+                    "command": "npx",
+                    "args": [
+                        "-y",
+                        "@modelcontextprotocol/server-brave-search"
+                    ],
+                    "env": {
+                        "BRAVE_API_KEY": "BSA8CF8YeaKwvdH5Mfy_Sy-zvR-isx_"
+                    },
+                    "transportType": "stdio",
+                    "autoApprove": [
+                        "brave_web_search",
+                        "brave_local_search"
+                    ],
+                    "disabled": false,
+                    "timeout": 60
+                }
+            }
+        }
+    }
+}
